@@ -1,0 +1,142 @@
+------------------------------------------------------------------------------
+
+1. P-value and why it matters or could be used incorrectly
+2. Applications of Central Limit Theorem
+3. SQL COUNT DISTINCT and CASE WHEN
+4. SQL Window functions
+5. Linear and logistic regression assumptions
+6. How to design and interpret A/B experiments
+7. Lists and dictionary use in Python or R
+8. Resampling methods and impact on models
+9. How to communicate with stakeholders
+10. How to create impactful data visualization
+11. Normal, Uniform and Poisson distributions
+12. SQL Subqueries and Temp Tables
+13. How to create a good metric
+14. Sorting algorithms
+15. (a little less common) Big O notation
+
+-------------------------------------------------------------------------------
+
+Problem Statement:
+
+Given 2 teams of Myntra namely:
+
+1. Finance Team: They focus to take decisions which are Money driven.
+
+2. Customer Experience Team : They focus to improve the Customer Experience with Myntra.
+
+Whenever Customer places a refund request Myntra can process it in 2 different ways:
+
+1. Directly accept the Return request.
+
+2. Put the request on hold and verify the product for damages or manhandling by customer. Only if the products are found to be in proper state, accept the return.
+
+Now, there is a conflict of opinion between these two teams.
+Finance Team likes the 2nd option as it minimize the chances of loss.
+
+But Customer Experience teams likes the 1st option as their main aim is to improve Customer Experience.
+
+Now suppose you are part of the Customer Experience team. How would you convince the Finance team to follow the 1st step.
+
+What kind of Data you would be looking for solving this task.
+
+Is there any need for model building for this use case.
+
+------------------------------------------------------------------------------------------------------------
+
+How to reverse a linked list
+
+Give a logistic regression model in production, how would you find out the coefficients of different input features.
+
+What is the p- value in OLS regression
+
+What's the reason for high bias or variance
+
+Which models are generally high biased or high variance
+
+Write code to find the 8 highest value in the DataFrame
+
+What's difference between array and list
+
+Whats the difference between Gradient boosting and Xgboost
+
+Is XOR data linearly separable
+
+How do we classify XOR data using logistic regression
+
+Given a sand timer of 4 and 7 mins how would you calculate 10 mins duration.
+
+What's the angle between hour and minute hand in clock as 3:15
+
+-----------------------------------------------------------------------------------------------------------
+
+What are the assumptions of Linear regression?
+
+What is multi collinearrity?
+
+What's the threshold you took for vif?
+What the formula of vif?
+
+Whats the meaning of precision and recall?
+
+Why is Xgboost better than Gradient boosting?
+
+What are different boosting algorithms?
+Whats the difference between boosting and bagging?
+
+If R squared is less than adj R squared will you accept the model?
+
+What exactly is the p-value in statsmodel OLS regression package?
+
+-------------------------------------------------------------------------------------------------------------
+
+1. P-value and why it matters or could be used incorrectly
+2. Applications of Central Limit Theorem
+3. SQL COUNT DISTINCT and CASE WHEN
+4. SQL Window functions
+5. Linear and logistic regression assumptions
+6. How to design and interpret A/B experiments
+7. Lists and dictionary use in Python or R
+8. Resampling methods and impact on models
+9. How to communicate with stakeholders
+10. How to create impactful data visualization
+11. Normal, Uniform and Poisson distributions
+12. SQL Subqueries and Temp Tables
+13. How to create a good metric
+14. Sorting algorithms
+15. Big O notation
+
+-------------------------------------------------------------------------------------------------------------
+
+Puzzles Qs:
+3 ants starts from starts from 3 different vertex of the triangle with same speed. They are free to choose the direction( clockwise or anti-clockwise). What's the probability that anyone of them collides.
+
+Given 2 eggs determine the minimum floor number(total 100 floors) from which egg breaks if thrown down. Tell me how would you approach this problem.
+
+What python packages you are familiar with.
+
+--------------------------------------------------------------------------------------------------------------
+
+Explain the working of Gradient boosting.
+Difference between boosting and bagging.
+
+What would you do when output is imbalanced.
+What is more preferred over sampling or under sampling.
+In what case under sampling a non harmful approach.
+
+How would you measure the performance of models built on imbalanced dataset.
+Whats the meaning of precision and recall.
+
+--------------------------------------------------------------------------------------------------------------
+
+I was asked to rate myself in Machine Learning, Data Science, Tensor flow, Pytorch, Flask, Docker, Kubernetes, AWS etc and the reason behind ratings.
+How did I handle the situation if models starts performing bad in production.
+How do i deploy models in mobile.
+What models did I use in project
+What evaluation metrics were used.
+etc..
+
+-------------------------------------------------------------------------------------------------------
+
+

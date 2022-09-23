@@ -1,0 +1,45 @@
+from google.colab import drive
+drive.mount('/content/drive')
+
+---------------------------------------
+
+for i in range(10):
+   if i == 5:
+      break
+   else:
+      print(i, end=' ')
+
+
+----------------------------------
+Which of the following function stacks 1d arrays as columns into a 2D array?
+
+row_stack
+column_stack
+
+-----------------------------------------------------------------------------------
+
+a = 'pythonHub'
+b = 'pythonHub'
+print(a == b)
+
+---------------------------------------------------------------------------------------
+
+1) Given a range of the first 10 numbers, write a function to iterate from the start number to the end number,
+and in each iteration print the sum of the current number and previous number.
+
+2) How do I remove duplicate characters from a string in Python?
+
+3) Print factors of the single number
+
+4) print the factors of number or list of numbers
+
+-------------------------------------------------------------------------------------------------------------------
+
+for i in range(len('python')):
+   'python'[i] = i
+print('python')
+
+--------------------------------------------------------------
+https://www.w3schools.com/python/python_regex.asp
+
+------------------------------------------------------------------------------------------
