@@ -1,4 +1,0 @@
-SELECT 
-    SEX,
-    row_number() over(PARTITION BY AGE ORDER BY AGE DESC) AS RAGE
-FROM TABLE
