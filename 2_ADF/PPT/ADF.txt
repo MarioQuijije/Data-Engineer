@@ -1,0 +1,22 @@
+
+Create Pipeline       : Circuits File ingestion
+
+Debugging a pipeline
+
+Update pipeline       : Ingest All other files
+
+Improve pipeline      : Handle missing files
+
+Create pipeline       : Transformation
+
+Create ADF Trigger
+
+----------------------------------------------------
+
+1) Creating Azure Data Factory
+
+2) Creating Azure Storage Account
+
+3) Creating Azure Data Lake Storage Gen2
+
+4) Creating Azure SQL Database
