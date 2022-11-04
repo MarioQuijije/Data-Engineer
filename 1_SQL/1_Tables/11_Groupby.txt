@@ -1,0 +1,36 @@
+----------------------------------------------------------------------------------
+TABLE 1: Department (Groupby)
+----------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS Department
+
+CREATE TABLE Department
+(emp_id INT,
+ emp_name VARCHAR(15),
+ job_name VARCHAR(10),
+)
+
+
+INSERT INTO Department
+VALUES
+(68319, 'KAYLING', 'PRESIDENT'),
+(66928, 'BLAZE', 'MANAGER'),
+(67832, 'CLARE', 'MANAGER'),
+(65646, 'JONAS', 'MANAGER'),
+(67858, 'SCARLET', 'ANALYST'),
+(69062, 'FRANK', 'ANALYST'),
+(63679, 'SANDRINE', 'CLERK'),
+(64989, 'ADELYN', 'SALESMAN'),
+(65271, 'WADE', 'SALESMAN'),
+(66564, 'MADDEN', 'SALESMAN'),
+(68454, 'TUCKER', 'SALESMAN'),
+(68736, 'ADNRES', 'CLERK'),
+(69000, 'JULIUS', 'CLERK'),
+(69324, 'MARKER', 'CLERK')
+(69325, 'PARKER', 'NULL')
+(69326, 'DARKER', 'NULL')
+(69327, 'JONES', 'NULL')
+
+SELECT * FROM Department
+
+--------------------------------
