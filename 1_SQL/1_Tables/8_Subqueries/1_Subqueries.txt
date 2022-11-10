@@ -1,0 +1,69 @@
+---------------------------------------------------------
+TABLE 01: student
+---------------------------------------------------------
+
+CREATE TABLE student
+(id     INT,
+ name   VARCHAR(10),
+ age    INT,
+ marks  FLOAT,
+ gender VARCHAR(10)
+);
+
+INSERT INTO student
+VALUES
+(1,  'student1',  18, 95,   'male'),
+(2,  'student2',  19, 90,   'male'),
+(3,  'student3',  17, 84.5, 'female'),
+(4,  'student4',  18, 75,   'male'),
+(5,  'student5',  18, 75,   'male'),
+(6,  'student6',  18, 55,   'male'),
+(7,  'student7',  18, 69,   'female'),
+(8,  'student8',  17, 79,   'male'),
+(9,  'student9',  18, 87,   'female'),
+(10, 'student10', 19, 98,   'male'),
+(11, 'student11', 18, 91,   'male'),
+(12, 'student12', 18, 65,   'male'),
+(13, 'student13', 19, 93,   'male'),
+(14, 'student14', 18, 45,   'female'),
+(15, 'student15', 18, 49,   'female'),
+(16, 'student16', 17, 70,   'female'),
+(17, 'student17', 18, 65,   'female');
+
+SELECT * FROM student
+
+-----------------------------------------------------------
+TABLE 02: employee
+---------------------------------------------------------
+
+CREATE TABLE employee
+(id     INT,
+ name   VARCHAR(10),
+ age    INT,
+ salary INT,
+ gender VARCHAR(10)
+);
+
+INSERT INTO employee
+VALUES
+(1,  'employee1',  18,  9543,   'male'),
+(2,  'employee2',  19,  9054,   'male'),
+(3,  'employee3',  17,  8654,   'female'),
+(4,  'employee4',  18,  7235,   'male'),
+(5,  'employee5',  18,  12395,  'male'),
+(6,  'employee6',  18,  5545,   'male'),
+(7,  'employee7',  18,  6569,   'female'),
+(8,  'employee8',  17,  7569,   'male'),
+(9,  'employee9',  18,  8877,   'female'),
+(10, 'employee10', 19,  2398,   'male'),
+(11, 'employee11', 18,  12191,  'male'),
+(12, 'employee12', 18,  4565,   'male'),
+(13, 'employee13', 19,  6793,   'male'),
+(14, 'employee14', 18,  9845,   'female'),
+(15, 'employee15', 18,  9849,   'female'),
+(16, 'employee16', 17,  6770,   'female'),
+(17, 'employee17', 18,  3665,   'female');
+
+SELECT * FROM employee
+
+-----------------------------------------------------------
