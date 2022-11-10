@@ -1,0 +1,47 @@
+INSERT INTO
+
+-------------------------------------------------------------------------
+TABLE 1: 
+-------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS EMP;
+
+CREATE TABLE EMP
+(ROLL_NO INT,
+ NAME VARCHAR(10),
+ ADDRESS VARCHAR(15),
+ PHONE VARCHAR(15),
+ Age INT
+);
+
+INSERT INTO EMP
+VALUES
+(1, 'Ram', 'Delhi', 'XXXXXXXXXX',	18),
+(2, 'RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
+(3, 'SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
+(4, 'SURESH', 'Delhi', 'XXXXXXXXXX', 18),
+(3, 'SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
+(2, 'RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
+(5, 'HARSH', 'WEST BENGAL', 'XXXXXXXXXX', 19);
+
+SELECT * FROM EMP
+
+DROP TABLE IF EXISTS Customer;
+
+CREATE TABLE Customer
+(ROLL_NO INT PRIMARY KEY,
+ NAME VARCHAR(10),
+ ADDRESS VARCHAR(10),
+ PHONE VARCHAR(15),
+ Age INT
+);
+
+INSERT INTO Customer
+VALUES
+(7, 'SOUVIK', 'DUMDUM', 'XXXXXXXXXX', 18),
+(8, 'NIRAJ', 'NOIDA', 'XXXXXXXXXX', 19),
+(9, 'SOMESH', 'ROHTAK', 'XXXXXXXXXX', 20);
+
+SELECT * FROM Customer
+
+-------------------------------------------------------------------------
