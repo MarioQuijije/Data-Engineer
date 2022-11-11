@@ -1,0 +1,74 @@
+----------------------------------------------------------------------------------
+Table 01: Data Type
+----------------------------------------------------------------------------------
+
+CREATE TABLE Demovarchar
+(Id int NOT NULL IDENTITY(1,1),
+ LastName varchar(10),
+ FirstName varchar(10),
+ Gender varchar,
+ DepartmentName varchar(20),
+ Age int
+);
+
+INSERT INTO Demovarchar VALUES('Gilbert', 'Kevin', 'M', 'Tool Design', 33)
+INSERT INTO Demovarchar VALUES('Tamburello', 'Andrea', 'F', 'Marketing', 45)
+INSERT INTO Demovarchar VALUES('Johnson', 'David', 'M', 'Engineering', 66)
+INSERT INTO Demovarchar VALUES('Sharma', 'Bradley', 'M', 'Production', 27)
+INSERT INTO Demovarchar VALUES('Rapier', 'Abigail', 'F', 'Human Resources', 38)
+INSERT INTO Demovarchar VALUES('Martin', 'Kelly', 'F', 'Information Services', 54)
+INSERT INTO Demovarchar VALUES('Poland', 'Carole', 'F', 'Production Control', 29)
+
+SELECT * FROM Demovarchar
+
+-----------------------------------------------------------------------------------
+Table 02: CHAR(N)
+-----------------------------------------------------------------------------------
+
+CREATE TABLE Student(Name VARCHAR(30), Gender CHAR(6));
+
+INSERT into Student VALUES('Herry', 'Male');
+INSERT into Student VALUES('Mahi', 'Female');
+
+SELECT LENGTH(Gender) FROM Student;
+
+---------------------------------------------------------------------------------
+Table 03: VARCHAR(N)
+-----------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS Customers
+
+CREATE TABLE Customers
+(CustomerID    INT PRIMARY KEY IDENTITY(1,1),
+ CustomerName  character varying(40),
+ ContactName   character varying(40),
+ Address       character varying(40),
+ City          character varying(40),
+ PostalCode    character varying(40),
+ Country       character varying(40)
+);
+
+DROP TABLE IF EXISTS Customers
+
+CREATE TABLE Customers
+(CustomerID    INT PRIMARY KEY IDENTITY(1,1),
+ CustomerName  VARCHAR(40),
+ ContactName   VARCHAR(40),
+ Address       VARCHAR(40),
+ City          VARCHAR(40),
+ PostalCode    VARCHAR(40),
+ Country       VARCHAR(40)
+);
+
+INSERT INTO Customers
+VALUES
+('Alfreds Futterkiste',	'Maria Anders',	'Obere Str. 57', 'Berlin', '12209', 'Germany'),
+('Ana Trujillo Emparedados y helados',	'Ana Trujillo',	'Avda. de la Constitución 2222', 'México D.F.',	'05021', 'Mexico'),
+('Antonio Moreno Taquería', 'Antonio Moreno', 'Mataderos 2312',	'México D.F.',	'05023', 'Mexico'),
+('Around the Horn', 'Thomas Hardy', '120 Hanover Sq.',	'London', 'WA1 1DP', 'UK'),
+('Berglunds snabbköp',	'Christina Berglund', 'Berguvsvägen 8',	'Luleå', 'S-958 22', 'Sweden');
+
+SELECT * FROM Customers
+
+--------------------------------------------------------------------------------------------------------------------------------
+
