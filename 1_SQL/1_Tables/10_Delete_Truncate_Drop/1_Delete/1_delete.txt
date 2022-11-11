@@ -1,0 +1,49 @@
+-----------------------------------
+Table 01
+-----------------------------------
+
+DROP TABLE IF EXISTS PRODUCT
+
+CREATE TABLE PRODUCT
+(ID     INT,
+ name   varchar(10),
+ price  decimal(5,2)
+);
+
+INSERT INTO PRODUCT
+VALUES
+(1, 'milk', 2.40),
+(2, 'bread', 3.68),
+(3, 'butter', 5.55),
+(4, 'sugar', 2.88);
+
+SELECT * FROM PRODUCT
+
+------------------------------------------------
+Table 02: Customers (Northwind sample database)
+------------------------------------------------
+
+DROP TABLE IF EXISTS Customers
+
+CREATE TABLE Customers
+(CustomerID    INT PRIMARY KEY IDENTITY(1,1),
+ CustomerName  VARCHAR(40),
+ ContactName   VARCHAR(40),
+ Address       VARCHAR(40),
+ City          VARCHAR(40),
+ PostalCode    VARCHAR(40),
+ Country       VARCHAR(40)
+);
+
+
+INSERT INTO Customers
+VALUES
+('Alfreds Futterkiste',	'Maria Anders',	'Obere Str. 57', 'Berlin', '12209', 'Germany'),
+('Ana Trujillo Emparedados y helados',	'Ana Trujillo',	'Avda. de la Constitución 2222', 'México D.F.',	'05021', 'Mexico'),
+('Antonio Moreno Taquería', 'Antonio Moreno', 'Mataderos 2312',	'México D.F.',	'05023', 'Mexico'),
+('Around the Horn', 'Thomas Hardy', '120 Hanover Sq.',	'London', 'WA1 1DP', 'UK'),
+('Berglunds snabbköp',	'Christina Berglund', 'Berguvsvägen 8',	'Luleå', 'S-958 22', 'Sweden');
+
+SELECT * FROM Customers
+
+-------------------------------------------------------------------------------------------------------------------------------	

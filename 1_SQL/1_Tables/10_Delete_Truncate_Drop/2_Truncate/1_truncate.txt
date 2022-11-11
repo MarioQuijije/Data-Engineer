@@ -1,0 +1,39 @@
+-------------------------------------------------------------------
+TABLE 01
+-------------------------------------------------------------------
+
+DROP TABLE IF EXISTS ExamResult;
+
+CREATE TABLE ExamResult
+(StudentName VARCHAR(70), 
+ Subject     VARCHAR(20), 
+ Marks       INT
+);
+
+INSERT INTO ExamResult
+VALUES
+('Lily', 'Maths', 65),
+('Lily', 'Science', 80),
+('Lily', 'english', 70),
+('Isabella', 'Maths', 50),
+('Isabella', 'Science', 70),
+('Isabella', 'english', 90),
+('Olivia', 'Maths', 55),
+('Olivia', 'Science', 60),
+('Olivia', 'english', 89);
+
+SELECT * FROM ExamResult
+
+TRUNCATE TABLE ExamResult
+
+
+
+INSERT INTO ExamResult
+VALUES
+('Lily', 'Maths', 65),
+('Lily', 'Science', 80),
+('Lily', 'english', 70);
+
+SELECT * FROM ExamResult
+
+----------------------------------------------------------------
