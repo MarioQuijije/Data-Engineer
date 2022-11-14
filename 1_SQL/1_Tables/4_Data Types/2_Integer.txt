@@ -1,0 +1,16 @@
+------------------------------------
+Table 01
+------------------------------------
+
+CREATE TABLE student (
+    student_id integer,
+    student_name varchar(50),
+    dues integer
+);
+
+INSERT INTO student 
+VALUES (1, 'Saumya', 123.5)
+
+SELECT * FROM student
+
+-----------------------------------

@@ -1,0 +1,91 @@
+------------------------------------------------------------------------
+Table 01: dbo.Patients
+------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS dbo.Patients
+
+CREATE TABLE dbo.Patients
+( Name varchar(10),
+  Gender varchar(2),
+  Height decimal (3,2),
+  Weight decimal (5,2)
+);
+
+INSERT INTO PATIENTS VALUES('John', 'M', 6.1, 80.4)
+INSERT INTO PATIENTS VALUES('Bred', 'M', 5.8, 73.7)
+INSERT INTO PATIENTS VALUES('Leslie', 'F', 5.3, 66.9)
+INSERT INTO PATIENTS VALUES('Rebecca', 'F', 5.7, 50.2)
+INSERT INTO PATIENTS VALUES('Shermas', 'M', 6.5, 190.6)
+
+SELECT * FROM dbo.PATIENTS
+
+INSERT INTO PATIENTS VALUES('Largest', 'M', '10.9', 88.5)
+INSERT INTO PATIENTS VALUES('Hulk', 'M', '9.9', 1000.45)
+
+ALTER TABLE dbo.Patients ALTER COLUMN Height decimal(4,2)
+ALTER TABLE dbo.Patients ALTER COLUMN Weight decimal (6,2)
+
+INSERT INTO PATIENTS VALUES('Largest', 'M', '10.9', 88.5)
+INSERT INTO PATIENTS VALUES('Hulk', 'M', '9.9', 1000.45)
+
+SELECT * FROM dbo.PATIENTS
+
+------------------------------------------------------------------------
+Table 02
+------------------------------------------------------------------------
+
+CREATE TABLE DemoTable  
+(Id INT IDENTITY, 
+ Employee VARCHAR(100),
+ Salary DECIMAL(10,2)
+);
+ 
+
+INSERT INTO DemoTable VALUES ('Harold Smith', 2350.2);  
+INSERT INTO DemoTable VALUES ('Robert Johnson', 1874.667);  
+INSERT INTO DemoTable VALUES ('Janice Lopez', 869.352);
+INSERT INTO DemoTable VALUES ('Kelly Wilson', 2500.50); 
+INSERT INTO DemoTable VALUES ('Grace Taylor', 900); 
+GO  
+
+SELECT * FROM DemoTable;
+
+---------------------------------------------------------------------
+Table 03
+---------------------------------------------------------------------
+
+CREATE TABLE DemoTable  
+(MyDecimal DECIMAL(10,3),
+ MyNumeric NUMERIC(10,3)
+);
+
+INSERT INTO DemoTable VALUES (1899.982, 1899.982);  
+
+SELECT * FROM DemoTable;
+
+---------------------------------------------------------------------
+Table 04
+---------------------------------------------------------------------
+
+CREATE TABLE dbo.MyTable  
+(MyDecimalColumn DECIMAL(5,2),  
+ MyNumericColumn NUMERIC(10,5)
+);  
+  
+ 
+INSERT INTO dbo.MyTable VALUES (123, 12345.12);  
+
+SELECT * FROM dbo.MyTable;
+
+---------------------------------------------------------------------
+
+SELECT
+  CAST(12 AS DECIMAL(7,2) ) AS decimal_value
+;
+
+
+SELECT
+  CONVERT(DECIMAL(7,2),12 ) AS decimal_value
+;
+
+---------------------------------------------------------------------

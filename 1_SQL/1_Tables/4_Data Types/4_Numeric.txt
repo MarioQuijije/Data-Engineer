@@ -1,0 +1,84 @@
+---------------------------------------------
+Table 01
+---------------------------------------------
+
+DROP TABLE IF EXISTS DemoTable;
+
+CREATE TABLE DemoTable  
+( 
+  Id INT IDENTITY, 
+  Employee VARCHAR(100),
+  Salary NUMERIC(10,2)
+);
+ 
+
+INSERT INTO DemoTable VALUES ('Harold Smith', 2350.2);  
+INSERT INTO DemoTable VALUES ('Robert Johnson', 1874.667);  
+INSERT INTO DemoTable VALUES ('Janice Lopez', 869.352);
+INSERT INTO DemoTable VALUES ('Kelly Wilson', 2500.50); 
+INSERT INTO DemoTable VALUES ('Grace Taylor', 900); 
+  
+
+SELECT * FROM DemoTable;
+
+---------------------------------------------
+Table 02
+---------------------------------------------
+
+DROP TABLE IF EXISTS account
+
+CREATE TABLE account (
+accountNo integer,
+balance numeric(8,2)
+);
+
+INSERT INTO account(accountNo, balance) VALUES(1313,12331411.23);
+
+SELECT * FROM account
+
+INSERT INTO account(accountNo, balance) VALUES(1313,123314.1123);
+
+INSERT INTO account(accountNo, balance) VALUES(1313,123314.1153);
+
+---------------------------------------------
+Table 03
+---------------------------------------------
+
+DROP TABLE IF EXISTS employee
+
+CREATE TABLE employee
+(account_number integer,
+ account_name varchar(50),
+ salary numeric (8,2)
+);
+
+INSERT INTO employee 
+VALUES (25, 'Sushant', 51000)
+
+SELECT * FROM employee
+
+INSERT INTO employee 
+VALUES (1, 'Sushant', 12345678.33)
+
+INSERT INTO employee 
+VALUES (1, 'Sushant', 123456.3333)
+
+----------------------------------------------
+Table 04
+----------------------------------------------
+
+CREATE TABLE student (
+    student_id integer,
+    bus_fee DECIMAL(3, 2),
+    dues NUMERIC(5,5)
+);
+
+INSERT INTO student 
+VALUES(
+    (1, 111, 12345.123)
+    (2, 145, 12345.6)
+);
+
+SELECT * FROM student
+
+-----------------------------------------------
