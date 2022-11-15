@@ -1,33 +1,47 @@
-1) IDENTITY
-
 -------------------------------------------------------------------------
 TABLE 1: 
 -------------------------------------------------------------------------
 
-DROP TABLE IF EXISTS EMP;
+DROP TABLE IF EXISTS DemoTable;
 
-CREATE TABLE EMP
-(ROLL_NO INT PRIMARY KEY IDENTITY(1,1),
- NAME VARCHAR(10),
- ADDRESS VARCHAR(15),
- PHONE VARCHAR(15),
- Age INT
+CREATE TABLE DemoTable  
+( 
+  Id INT IDENTITY, 
+  Name VARCHAR(100),
+  Age TINYINT
 );
 
-INSERT INTO EMP
-VALUES
-('Ram', 'Delhi', 'XXXXXXXXXX',	18),
-('RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
-('SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
-('SURESH', 'Delhi', 'XXXXXXXXXX', 18),
-('SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
-('RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
-('HARSH', 'WEST BENGAL', 'XXXXXXXXXX', 19);
+INSERT INTO DemoTable VALUES ('Anna', 32);  
+INSERT INTO DemoTable VALUES ('Carlos', 19); 
+INSERT INTO DemoTable VALUES ('Marlon', 55);  
+INSERT INTO DemoTable VALUES ('Kelly', 41);
+INSERT INTO DemoTable VALUES ('Martha', NULL); 
 
-SELECT * FROM EMP
+SELECT * FROM DemoTable;
 
 -------------------------------------------------------------------------
 TABLE 2:
+-------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS Persons;
+
+CREATE TABLE Persons
+(Personid int IDENTITY(1,1) PRIMARY KEY,
+ LastName varchar(15) NOT NULL,
+ FirstName varchar(15),
+ Age int
+);
+
+INSERT INTO Persons (FirstName, LastName)
+VALUES
+('Lars', 'Monsen'),
+('Victor', 'Wadeson'),
+('David', 'Carl');
+
+SELECT * FROM Persons
+
+------------------------------------------------------------------------
+TABLE 3:
 -------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS EmployeeData;
@@ -53,28 +67,40 @@ VALUES
 
 SELECT * FROM EmployeeData
 
--------------------------------------------------------------------------
-TABLE 3:
+--------------------------------------------------------------------
+TABLE 4:
 -------------------------------------------------------------------------
 
-DROP TABLE IF EXISTS EmployeeData;
+DROP TABLE IF EXISTS EMP;
 
-CREATE TABLE Persons
-(Personid int IDENTITY(1,1) PRIMARY KEY,
- LastName varchar(255) NOT NULL,
- FirstName varchar(255),
- Age int
+CREATE TABLE EMP
+(ROLL_NO INT PRIMARY KEY IDENTITY(1,1),
+ NAME VARCHAR(10),
+ ADDRESS VARCHAR(15),
+ PHONE VARCHAR(15),
+ Age INT
 );
 
-
-INSERT INTO Persons (FirstName, LastName)
+INSERT INTO EMP
 VALUES
-('Lars', 'Monsen'),
-('Victor', 'Wadeson'),
-('David', 'Carl');
+('Ram', 'Delhi', 'XXXXXXXXXX',	18),
+('RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
+('SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
+('SURESH', 'Delhi', 'XXXXXXXXXX', 18),
+('SUJIT', 'ROHTAK', 'XXXXXXXXXX', 20),
+('RAMESH', 'GURGAON', 'XXXXXXXXXX', 18),
+('HARSH', 'WEST BENGAL', 'XXXXXXXXXX', 19);
 
+SELECT * FROM EMP
 
-SELECT * FROM Persons;
+INSERT INTO EMP
+VALUES
+('Rajesh', 'Delhi', 'XXXXXXXXXX',    28),
+('Romio', 'GURGAON', 'XXXXXXXXXX', 35),
+('Suraj', 'ROHTAK', 'XXXXXXXXXX', 05);
 
----------------------------------------------------------------------------
+SELECT * FROM EMP
+
+-------------------------------------------------------------------------
+
 
