@@ -1,0 +1,39 @@
+----------------------------------------------------------------
+Table 1:
+----------------------------------------------------------------
+
+DROP TABLE IF EXISTS DemoTable;
+
+CREATE TABLE DemoTable  
+( 
+  Id INT IDENTITY, 
+  PatientName VARCHAR(100),
+  Celsius FLOAT,
+  Fahrenheit FLOAT
+);
+
+INSERT INTO DemoTable VALUES ('Harold Smith', 36.2, 97.16);  
+INSERT INTO DemoTable VALUES ('Robert Johnson', 35.8, 96.44);  
+INSERT INTO DemoTable VALUES ('Janice Lopez', 37.32, 99.176);
+INSERT INTO DemoTable VALUES ('Kelly Wilson', 35.89, 96.602); 
+INSERT INTO DemoTable VALUES ('Grace Taylor', NULL, NULL); 
+
+SELECT * FROM DemoTable;
+
+--------------------------------------------------------------------
+Table 2:
+--------------------------------------------------------------------
+
+DROP TABLE IF EXISTS DemoTable;
+
+CREATE TABLE DemoTable  
+( 
+  MyFloat FLOAT(24),
+  MyReal REAL
+); 
+
+INSERT INTO DemoTable VALUES (1899.982, 1899.982);  
+
+SELECT * FROM DemoTable;
+
+--------------------------------------------------------------------
