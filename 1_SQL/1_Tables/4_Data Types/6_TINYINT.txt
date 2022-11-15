@@ -1,0 +1,41 @@
+--------------------------------------------------------
+Table 01
+--------------------------------------------------------
+
+DROP TABLE IF EXISTS DemoTable;
+
+CREATE TABLE DemoTable  
+( 
+  Id INT IDENTITY, 
+  Name VARCHAR(100),
+  Age TINYINT
+);
+
+INSERT INTO DemoTable VALUES ('Anna', 32);  
+INSERT INTO DemoTable VALUES ('Carlos', 19); 
+INSERT INTO DemoTable VALUES ('Marlon', 55);  
+INSERT INTO DemoTable VALUES ('Kelly', 41);
+INSERT INTO DemoTable VALUES ('Martha', NULL); 
+
+SELECT * FROM DemoTable;
+
+------------------------------------------------------------------------------------
+Table 02
+------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS DemoTable;
+
+CREATE TABLE DemoTable  
+( 
+  MyBigInt BIGINT,
+  MyInt INT,
+  MySmallInt SMALLINT,
+  MyTinyInt TINYINT
+); 
+
+INSERT INTO DemoTable VALUES (9223372036854775807, 2147483647, 32767, 255);  
+
+SELECT * FROM DemoTable;
+
+---------------------------------------------------------------------------------------
+
