@@ -1,0 +1,23 @@
+------------------------------------------------------------------------
+Table 01:
+------------------------------------------------------------------------
+
+CREATE TABLE Users (    
+  Id INT IDENTITY,  
+  Name VARCHAR(55),  
+  Mobile_no VARCHAR(20),  
+  Branch VARCHAR(30),  
+  Email VARCHAR(20),  
+  Address VARCHAR(45),  
+  City VARCHAR(30),  
+  CONSTRAINT chk_phone CHECK (Mobile_no not like '%[^0-9]%'),  
+  PRIMARY KEY (Id, Name)  
+);   
+
+ALTER TABLE Users  
+DROP CONSTRAINT chk_phone;
+
+ALTER TABLE Users
+DROP Column Mobile_no;
+
+------------------------------------------------------------------------
