@@ -1,6 +1,6 @@
-----------------------------------------------------------------------------------------
+--------------------------------------------------------------------
 Table 01:
-----------------------------------------------------------------------------------------
+--------------------------------------------------------------------
 
 CREATE TABLE Users (    
   Id INT IDENTITY,  
@@ -15,4 +15,80 @@ CREATE TABLE Users (
 );   
 
 
-----------------------------------------------------------------------------------------
+---------------------------------------------------------------------
+Table 02:
+---------------------------------------------------------------------
+
+CREATE TABLE Employees
+( Employee_Id INT IDENTITY NOT NULL PRIMARY KEY,
+  First_Name VARCHAR(100) NOT NULL,
+  Last_Name VARCHAR(100) NOT NULL,
+  DOB DATETIME,
+  Dept varchar(100),
+  Salary Money
+);
+
+DROP TABLE Employees
+
+CREATE TABLE Employees
+( Employee_Id INT IDENTITY NOT NULL,
+  First_Name VARCHAR(100) NOT NULL,
+  Last_Name VARCHAR(100) NOT NULL,
+  DOB DATETIME,
+  Dept varchar(100),
+  Salary Money,
+  CONSTRAINT PK_Employees PRIMARY KEY (Employee_Id)
+);
+
+--------------------------------------------------------------------
+Table 03:
+--------------------------------------------------------------------
+
+CREATE TABLE Employees
+ ( Employee_Id INT IDENTITY NOT NULL,
+   First_Name VARCHAR(100) NOT NULL,
+   Last_Name VARCHAR(100) NOT NULL,
+   DOB DATETIME,
+   Dept varchar(100),
+   Salary Money
+ );
+
+ALTER TABLE Employees
+ADD CONSTRAINT PK_Employees PRIMARY KEY (Employee_ID);
+
+--------------------------------------------------------------------
+Table 04:
+--------------------------------------------------------------------
+DROP TABLE Employees
+
+CREATE TABLE Employees
+( Employee_Id INT IDENTITY NOT NULL,
+  First_Name VARCHAR(100) NOT NULL,
+  Last_Name VARCHAR(100) NOT NULL,
+  DOB DATETIME,
+  Dept varchar(100),
+  Salary Money,
+  CONSTRAINT PK_Employees PRIMARY KEY NONCLUSTERED (Employee_Id)
+);
+
+CREATE TABLE Employees
+( Employee_Id INT IDENTITY NOT NULL,
+  First_Name VARCHAR(100) NOT NULL,
+  Last_Name VARCHAR(100) NOT NULL,
+  DOB DATETIME,
+  Dept varchar(100),
+  Salary Money
+);
+
+-- Create Clustered Index on Employee_Id column before creating Primary Key
+CREATE CLUSTERED INDEX IX_Employee_ID ON Employees(First_Name, Last_Name);
+
+-- Create Primary Key on Employee_Id column
+ALTER TABLE Employees
+ADD CONSTRAINT PK_Employees PRIMARY KEY (Employee_ID);
+
+DROP INDEX IX_Employee_ID ON Employees;
+
+-----------------------------------------------------------------------------------
+
+https://codingsight.com/primary-keys-in-sql-server/
