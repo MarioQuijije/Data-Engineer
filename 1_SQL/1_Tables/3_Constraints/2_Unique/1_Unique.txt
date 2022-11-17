@@ -1,0 +1,17 @@
+---------------------------------------------------------
+Table 01
+---------------------------------------------------------
+
+CREATE TABLE employees
+ ( employee_id INT PRIMARY KEY,
+   employee_number INT NOT NULL,
+   last_name VARCHAR(50) NOT NULL,
+   first_name VARCHAR(50),
+   salary MONEY,
+   CONSTRAINT employees_unique UNIQUE (employee_number)
+ );
+
+ALTER TABLE employees
+ADD CONSTRAINT employees_unique UNIQUE(employee_number)
+
+--------------------------------------------------------
