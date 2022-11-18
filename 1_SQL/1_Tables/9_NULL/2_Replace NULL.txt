@@ -1,0 +1,78 @@
+-------------------------------------------
+Table 01
+-------------------------------------------
+
+DROP TABLE IF EXISTS Employee
+
+CREATE TABLE Employee
+(empId     INT IDENTITY PRIMARY KEY,
+ name      VARCHAR(10),
+ location  VARCHAR(10),
+ gender    VARCHAR(3)
+);
+
+INSERT INTO Employee
+VALUES
+('Aditi', 'India', 'F'),
+('Warner', 'Australia', 'M'),
+('David', 'NULL', 'M'),
+('Sarah', 'NULL', 'F'),
+('Joseph', 'USA', 'M'),
+('Jordan', 'NULL', 'F');
+
+SELECT * FROM Employee
+
+-----------------------------------------
+Table 02: COALESCE
+-----------------------------------------
+
+DROP TABLE IF EXISTS GeekName
+
+CREATE TABLE GeekName
+(F_Name   VARCHAR(10),
+ M_Name   VARCHAR(10),
+ L_Name   VARCHAR(10)
+); 
+
+INSERT INTO GeekName
+VALUES
+('Manoj', 'M.', 'Kumar'),
+('Khushi', 'NULL', 'Modi'),
+('Payal', 'K.', 'Chauan'),
+('Nisha', 'NULL', 'Gupta'),
+('Mina', 'NULL', 'Singh'),
+('Kishan', 'C.', 'Maan');
+
+SELECT * FROM GeekName
+
+-----------------------------------------
+Table 03:
+-----------------------------------------
+
+DROP TABLE IF EXISTS tb_EmergencyContact;
+
+CREATE TABLE tb_EmergencyContact
+(empid int,
+ firstname   VARCHAR(100) NOT NULL,
+ lastname    VARCHAR(100) NOT NULL,
+ relationship VARCHAR(100),
+ homephone   VARCHAR(25),
+ workphone   VARCHAR(25),
+ cellphone   VARCHAR(25)
+); 
+
+
+INSERT INTO tb_EmergencyContact ( empid, firstname, lastname, relationship, homephone, workphone, cellphone )
+VALUES
+(1, 'Ambika', 'Prashanth', 'Wife', NULL, '920.176.1456', '928.132.2967'),
+(2, 'Prashanth', 'Jayaram', 'spouse', NULL, NULL, '982.132.2867'),
+(3, 'Pravitha', 'Prashanth', 'Daughter', NULL, NULL, NULL)
+
+SELECT * FROM tb_EmergencyContact;
+
+SELECT firstname + '' + lastname fullname,
+       relationship,
+       COALESCE(homephone, workphone, cellphone, 'NA') phone
+FROM tb_EmergencyContact
+
+-----------------------------------------------------------------------------------------

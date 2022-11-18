@@ -1,0 +1,20 @@
+-----------------------------------------------------------------------------
+Table : Department
+-----------------------------------------------------------------------------
+
+Create table Department(Empid int, Empname varchar(10), Dept varchar(10));
+
+insert into dept values(1, 'A', 'HR');
+insert into dept values(2, 'B', 'HR');
+insert into dept values(3, 'C', 'SALES');
+insert into dept values(4, 'D', 'SALES');
+insert into dept values(5, 'E', 'SALES');
+insert into dept values(6, 'F', NULL);
+insert into dept values(7, 'G', NULL);
+insert into dept values(1, 'A', 'HR');
+insert into dept values(2, 'B', 'HR');
+insert into dept values(3, 'C', 'SALES');
+
+SELECT * FROM Department
+
+-----------------------------------------------------------------------------
