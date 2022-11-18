@@ -46,7 +46,7 @@ VALUES
 SELECT * FROM GeekName
 
 -----------------------------------------
-Table 03:
+Table 03: COALESCE
 -----------------------------------------
 
 DROP TABLE IF EXISTS tb_EmergencyContact;
@@ -76,3 +76,77 @@ SELECT firstname + '' + lastname fullname,
 FROM tb_EmergencyContact
 
 -----------------------------------------------------------------------------------------
+Table 04: COALESCE
+-----------------------------------------
+
+DROP TABLE IF EXISTS Products;
+
+CREATE TABLE Products
+(Name  VARCHAR(15),
+ Color VARCHAR(10),
+ ProductNumber INT);
+
+INSERT INTO Products
+VALUES
+('Socks, Mens', 'NULL', 'PN1278'),
+('Socks, Mens', 'Blue', 'PN1965'),
+('NULL', 'White', 'PN9876');
+
+SELECT * FROM Products;
+
+----------------------------------------
+Table 05:
+----------------------------------------
+
+CREATE TABLE wages  
+(  
+    emp_id        TINYINT   NULL,  
+    hourly_wage   DECIMAL   NULL,  
+    salary        DECIMAL   NULL,  
+    commission    DECIMAL   NULL,  
+    num_sales     TINYINT   NULL  
+);
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (1, 10.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (2, 20.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (3, 30.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (4, 40.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (5, NULL, 10000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (6, NULL, 20000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (7, NULL, 30000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (8, NULL, 40000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (9, NULL, NULL, 15000, 3);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (10,NULL, NULL, 25000, 2);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (11, NULL, NULL, 20000, 6);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (12, NULL, NULL, 14000, 4);  
+
+SELECT * FROM wages;
+  
+SELECT CAST(COALESCE(hourly_wage * 40 * 52, salary, commission * num_sales) AS DECIMAL(10,2)) AS TotalSalary   
+FROM wages  
+ORDER BY TotalSalary;  
+
+---------------------------------------------------------------------------------------
