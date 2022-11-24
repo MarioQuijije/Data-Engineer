@@ -1,0 +1,51 @@
+-----------------------------------------------------------
+Table 01
+-----------------------------------------------------------
+
+DROP TABLE IF EXISTS tblperson
+
+CREATE TABLE tblperson
+(FirstName VARCHAR(8),
+ Surname   VARCHAR(8)
+);
+
+INSERT INTO tblperson
+VALUES
+('Prasad', NULL),
+('Raju', NULL),
+(NULL, 'Koirala'),
+(NULL, 'Shinde'),
+(NULL, NULL);
+
+SELECT * FROM tblperson
+
+SELECT ISNULL(FirstName, Surname) as NAME
+FROM tblperson
+
+----------------------------------------------------------
+Table 02
+----------------------------------------------------------
+
+CREATE TABLE divisions
+(
+    id      INT PRIMARY KEY IDENTITY, 
+    min_age INT DEFAULT 0, 
+    max_age INT
+);
+
+INSERT INTO divisions(min_age, max_age)
+VALUES
+(5,null),
+(20,null),
+(null,30);
+
+SELECT * FROM divisions
+
+SELECT 
+    id, 
+    ISNULL(min_age,0) min_age, 
+    ISNULL(max_age,99) max_age
+FROM
+    divisions;
+
+-----------------------------------------------------------

@@ -1,0 +1,297 @@
+-------------------------------------------------------------------
+Table 01
+-------------------------------------------------------------------
+
+DROP TABLE IF EXISTS tblperson
+
+CREATE TABLE tblperson
+(FirstName VARCHAR(8),
+ Surname   VARCHAR(8)
+);
+
+INSERT INTO tblperson
+VALUES
+('Prasad', NULL),
+('Raju', NULL),
+(NULL, 'Koirala'),
+(NULL, 'Shinde'),
+(NULL, NULL);
+
+SELECT * FROM tblperson
+
+SELECT COALESCE(FirstName, Surname, 'Missing_Value') as NAME
+FROM tblperson
+
+-------------------------------------------------------------------
+Table 02
+-------------------------------------------------------------------
+
+DROP TABLE IF EXISTS tblperson
+
+CREATE TABLE tblperson
+(FirstName VARCHAR(8),
+ Surname   VARCHAR(8),
+ Petname   VARCHAR(8)
+);
+
+INSERT INTO tblperson
+VALUES
+('Prasad', NULL, NULL),
+('Raju', NULL, NULL),
+(NULL, 'Koirala', NULL),
+(NULL, 'Shinde', NULL),
+(NULL, NULL, 'Shivdya');
+
+SELECT * FROM tblperson
+
+SELECT COALESCE(FirstName, Surname, Petname) as NAME
+FROM tblperson
+
+-------------------------------------------
+Table 03
+-------------------------------------------
+DROP TABLE IF EXISTS tblEmployee
+
+CREATE TABLE tblEmployee
+(Id     INT IDENTITY PRIMARY KEY,
+ FirstName    VARCHAR(10),
+ MiddleName   VARCHAR(10),
+ LastName     VARCHAR(10)
+);
+
+INSERT INTO tblEmployee
+VALUES
+('Sam', NULL, NULL),
+(NULL, 'Todd', 'Tanzan'),
+('David', 'NULL', 'M'),
+(NULL, NULL, 'Sara'),
+('Ben', 'Parker', NULL),
+('James', 'Nick', 'Nancy');
+
+SELECT * FROM tblEmployee
+
+SELECT Id, COALESCE(FirstName, MiddleName, LastName) AS Name
+FROM tblEmployee
+
+--------------------------------------------
+Table 04
+-------------------------------------------
+
+DROP TABLE IF EXISTS persons
+
+CREATE TABLE persons
+(first_name VARCHAR(10),
+ last_name VARCHAR(10),
+ marital_status VARCHAR(10));
+ 
+ INSERT INTO persons
+ VALUES
+ ('Charles', 'Leclerc', 'single'),
+ ('Fernando', 'Alonso', 'married'),
+ ('George', 'Graue', NULL);
+ 
+ SELECT * FROM persons
+ 
+ SELECT 
+  first_name,
+  last_name,
+  COALESCE(marital_status,'Unknown') Status
+FROM persons
+
+--------------------------------------------
+Table 04
+-------------------------------------------
+
+DROP TABLE IF EXISTS Employee
+
+CREATE TABLE Employee
+(empId     INT IDENTITY PRIMARY KEY,
+ name      VARCHAR(10),
+ location  VARCHAR(10),
+ gender    VARCHAR(3)
+);
+
+INSERT INTO Employee
+VALUES
+('Aditi', 'India', 'F'),
+('Warner', 'Australia', 'M'),
+('David', NULL, 'M'),
+('Sarah', NULL, 'F'),
+('Joseph', 'USA', 'M'),
+('Jordan', NULL, 'F');
+
+SELECT * FROM Employee
+
+SELECT empId, name,
+       COALESCE(location,'Unknown') as Replace
+FROM Employee;
+
+-----------------------------------------
+Table 05
+-----------------------------------------
+
+DROP TABLE IF EXISTS GeekName
+
+CREATE TABLE GeekName
+(F_Name   VARCHAR(10),
+ M_Name   VARCHAR(10),
+ L_Name   VARCHAR(10)
+); 
+
+INSERT INTO GeekName
+VALUES
+('Manoj', 'M.', 'Kumar'),
+('Khushi', NULL, 'Modi'),
+('Payal', 'K.', 'Chauan'),
+('Nisha', NULL, 'Gupta'),
+('Mina', NULL, 'Singh'),
+('Kishan', 'C.', 'Maan');
+
+SELECT * FROM GeekName
+
+SELECT F_Name + ' ' + M_Name + ' ' + L_Name FullName
+FROM GeekName;
+
+SELECT F_Name + ' ' + COALESCE(M_Name, '') + ' ' + L_Name FullName
+FROM GeekName;
+
+-----------------------------------------
+Table 06
+-----------------------------------------
+
+DROP TABLE IF EXISTS tb_EmergencyContact;
+
+CREATE TABLE tb_EmergencyContact
+(empid int,
+ firstname   VARCHAR(100) NOT NULL,
+ lastname    VARCHAR(100) NOT NULL,
+ relationship VARCHAR(100),
+ homephone   VARCHAR(25),
+ workphone   VARCHAR(25),
+ cellphone   VARCHAR(25)
+); 
+
+
+INSERT INTO tb_EmergencyContact ( empid, firstname, lastname, relationship, homephone, workphone, cellphone )
+VALUES
+(1, 'Ambika', 'Prashanth', 'Wife', NULL, '920.176.1456', '928.132.2967'),
+(2, 'Prashanth', 'Jayaram', 'spouse', NULL, NULL, '982.132.2867'),
+(3, 'Pravitha', 'Prashanth', 'Daughter', NULL, NULL, NULL)
+
+SELECT * FROM tb_EmergencyContact;
+
+SELECT firstname + '' + lastname fullname,
+       relationship,
+       COALESCE(homephone, workphone, cellphone, 'NA') phone
+FROM tb_EmergencyContact
+
+-----------------------------------------------------------------------------------------
+Table 07
+-----------------------------------------
+
+DROP TABLE IF EXISTS Products;
+
+CREATE TABLE Products
+(Name  VARCHAR(15),
+ Color VARCHAR(10),
+ ProductNumber VARCHAR(10));
+
+INSERT INTO Products
+VALUES
+('Socks, Mens', 'NULL', 'PN1278'),
+('Socks, Mens', 'Blue', 'PN1965'),
+('NULL', 'White', 'PN9876');
+
+SELECT * FROM Products;
+
+----------------------------------------
+Table 08
+----------------------------------------
+
+CREATE TABLE wages  
+(  
+    emp_id        TINYINT   IDENTITY,  
+    hourly_wage   DECIMAL   NULL,  
+    salary        DECIMAL   NULL,  
+    commission    DECIMAL   NULL,  
+    num_sales     TINYINT   NULL  
+);  
+ 
+INSERT INTO wages (hourly_wage, salary, commission, num_sales)  
+VALUES  
+(10.00, NULL, NULL, NULL),  
+(20.00, NULL, NULL, NULL),  
+(30.00, NULL, NULL, NULL),  
+(40.00, NULL, NULL, NULL),  
+(NULL, 10000.00, NULL, NULL),  
+(NULL, 20000.00, NULL, NULL),  
+(NULL, 30000.00, NULL, NULL),  
+(NULL, 40000.00, NULL, NULL),  
+(NULL, NULL, 15000, 3),  
+(NULL, NULL, 25000, 2),  
+(NULL, NULL, 20000, 6),  
+(NULL, NULL, 14000, 4);  
+
+ 
+SELECT CAST(COALESCE(hourly_wage * 40 * 52,   
+       salary,   
+       commission * num_sales) AS money) AS 'Total Salary'   
+FROM wages  
+ORDER BY 'Total Salary';  
+
+----------------------------------------
+Table 09
+----------------------------------------
+
+CREATE TABLE wages  
+(  
+    emp_id        TINYINT   NULL,  
+    hourly_wage   DECIMAL   NULL,  
+    salary        DECIMAL   NULL,  
+    commission    DECIMAL   NULL,  
+    num_sales     TINYINT   NULL  
+);
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (1, 10.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (2, 20.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (3, 30.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (4, 40.00, NULL, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (5, NULL, 10000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (6, NULL, 20000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (7, NULL, 30000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (8, NULL, 40000.00, NULL, NULL);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (9, NULL, NULL, 15000, 3);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (10,NULL, NULL, 25000, 2);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (11, NULL, NULL, 20000, 6);  
+  
+INSERT INTO wages (emp_id, hourly_wage, salary, commission, num_sales)  
+VALUES (12, NULL, NULL, 14000, 4);  
+
+SELECT * FROM wages;
+  
+SELECT CAST(COALESCE(hourly_wage * 40 * 52, salary, commission * num_sales) AS DECIMAL(10,2)) AS TotalSalary   
+FROM wages  
+ORDER BY TotalSalary;  
+
+---------------------------------------------------------------------------------------
