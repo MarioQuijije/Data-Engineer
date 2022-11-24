@@ -1,5 +1,53 @@
 --------------------------------------------
-TABLE: CustomerTable
+Table 01
+--------------------------------------------
+
+CREATE TABLE OrderDetails
+(OrderID INT,
+ Quantity INT
+);
+
+INSERT INTO OrderDetails
+VALUES
+(10248, 12),
+(10248, 10),
+(10248, 5),
+(10249, 9),
+(10249, 40),
+(10250, 10),
+(10250, 35)
+
+SELECT * FROM OrderDetails
+
+--------------------------------------------
+Table 02
+-------------------------------------------
+
+CREATE TABLE EMPLOYEE
+(empId INT,
+ name varchar(10),
+ age INT
+);
+
+INSERT INTO EMPLOYEE
+VALUES
+(1, 'Andrew', 38),
+(2, 'David', 29),
+(3, 'joe', 41),
+(4, 'Joseph', 27),
+(5, 'Sarah', 33);
+
+SELECT * FROM EMPLOYEE;
+
+SELECT *,
+CASE
+    WHEN age>30 THEN 'old employee'
+    WHEN age<30 THEN 'new employee'
+    END AS Status
+FROM EMPLOYEE;
+
+--------------------------------------------
+Table 03
 --------------------------------------------
 
 CREATE TABLE CustomerTable
@@ -26,7 +74,7 @@ SUM(CASE WHEN Orders > 1 THEN 1 ELSE 0 END) / CAST(COUNT(*) AS FLOAT) AS '%Repea
 FROM CustomerTable
 
 -----------------------------------------------------------------------------------------------
-TABLE : EMPLOYEE
+Table 04
 -----------------------------------------------------------------------------------------------
 
 CREATE TABLE Employee 
@@ -55,7 +103,7 @@ VALUES
 SELECT * FROM Employee
 
 -----------------------------------------------------------------------------------------------
-TABLE: PhoneNumbers
+Table 05
 -----------------------------------------------------------------------------------------------
 
 CREATE TABLE PhoneNumbers
@@ -88,3 +136,36 @@ CASE WHEN MobileNum IS NOT NULL THEN MobileNum + ' MobileNum'
 FROM phonenumbers
 
 -----------------------------------------------------------------------------------------------------
+Table 06
+-----------------------------------------------------------------------------------------------------
+
+CREATE TABLE stores
+ (Store VARCHAR(2),
+  Week INT,
+  Count INT
+ );
+
+ INSERT INTO stores
+ VALUES
+ ('A', 1, 96),
+ ('B', 1, 138),
+ ('C', 1, 37),
+ ('D', 1, 59),
+ ('A', 2, 282),
+ ('C', 2, 78),
+ ('D', 2, 97),
+ ('A', 3, 60),
+ ('B', 3, 123),
+ ('C', 3, 220),
+ ('D', 3, 87);
+
+ SELECT * FROM stores
+
+ SELECT Store,
+ sum(case when week=1 then count else 0 end) as "1",
+ sum(case when week=2 then count else 0 end) as "2",
+ sum(case when week=3 then count else 0 end) as "3"
+ FROM stores
+ GROUP BY Store
+
+-------------------------------------------------------------------
