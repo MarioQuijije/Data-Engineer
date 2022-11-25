@@ -50,6 +50,36 @@ FROM EMPLOYEE;
 Table 03
 --------------------------------------------
 
+DROP TABLE IF EXISTS emp
+
+CREATE TABLE emp
+(emp_id TINYINT,
+ emp_name VARCHAR(10),
+ department_id SMALLINT,
+ salary INT,
+ manager_id TINYINT,
+ emp_age TINYINT
+);
+
+INSERT INTO emp
+VALUES
+(1, 'Ankit', 100, 10000, 4, 39),
+(2, 'Mohit', 100, 15000, 5, 48),
+(3, 'Vikas', 100, 10000, 4, 37),
+(4, 'Rohit', 100, 5000, 2, 16),
+(5, 'Mudit', 200, 12000, 6, 55),
+(6, 'Agam', 200, 12000, 2, 14),
+(7, 'Sanjay', 200, 9000, 2, 13),
+(8, 'Ashish', 200, 5000, 2, 12),
+(9, 'Mukesh', 300, 6000, 6, 51),
+(10, 'Rakesh', 300, 7000, 6, 50);
+
+SELECT * FROM emp;
+
+--------------------------------------------
+Table 04
+--------------------------------------------
+
 CREATE TABLE CustomerTable
 (Customer VARCHAR(2),
  Orders INT,
@@ -74,7 +104,7 @@ SUM(CASE WHEN Orders > 1 THEN 1 ELSE 0 END) / CAST(COUNT(*) AS FLOAT) AS '%Repea
 FROM CustomerTable
 
 -----------------------------------------------------------------------------------------------
-Table 04
+Table 05
 -----------------------------------------------------------------------------------------------
 
 CREATE TABLE Employee 
@@ -103,7 +133,7 @@ VALUES
 SELECT * FROM Employee
 
 -----------------------------------------------------------------------------------------------
-Table 05
+Table 06
 -----------------------------------------------------------------------------------------------
 
 CREATE TABLE PhoneNumbers
@@ -136,7 +166,7 @@ CASE WHEN MobileNum IS NOT NULL THEN MobileNum + ' MobileNum'
 FROM phonenumbers
 
 -----------------------------------------------------------------------------------------------------
-Table 06
+Table 07
 -----------------------------------------------------------------------------------------------------
 
 CREATE TABLE stores
@@ -162,9 +192,9 @@ CREATE TABLE stores
  SELECT * FROM stores
 
  SELECT Store,
- sum(case when week=1 then count else 0 end) as "1",
- sum(case when week=2 then count else 0 end) as "2",
- sum(case when week=3 then count else 0 end) as "3"
+ sum(case when week=1 then count else 0 end) as "Week1",
+ sum(case when week=2 then count else 0 end) as "Week2",
+ sum(case when week=3 then count else 0 end) as "Week3"
  FROM stores
  GROUP BY Store
 

@@ -1,0 +1,28 @@
+------------------------------------------------------
+Table 01
+------------------------------------------------------
+DROP TABLE IF EXISTS customers
+
+CREATE TABLE customers
+(customer_id INT,
+ first_name varchar(15),
+ last_name varchar(15),
+ phone char(10),
+ gender varchar(15)
+);
+
+INSERT INTO customers
+VALUES
+(1, 'Priya', 'Abhishek', '9111111111', 'male'),
+(2, 'Abhishek', 'Aditya', '9111111111', 'Female'),
+(3, 'Aditya', 'C', '8111111111', 'Female'),
+(4, 'divya', 'A', '7111111111', 'male'),
+(5, 'tanvi', 'B', '6111111111', 'male'),
+(6, 'Marcus', 'B', '6111111111', 'Female'),
+(7, 'Crur', NULL, '8222222222', 'Female'),
+(8, 'Eddie', NULL, '9222222222', 'Female'),
+(9, 'Angela', 'AB', '7222222222', 'Female');
+
+SELECT * FROM customers
+
+-----------------------------------------------------
