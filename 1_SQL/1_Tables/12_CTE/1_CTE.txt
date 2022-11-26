@@ -1,0 +1,56 @@
+--------------------------------------------
+Table 01
+--------------------------------------------
+
+DROP TABLE IF EXISTS emp
+
+CREATE TABLE emp
+(emp_id TINYINT,
+ emp_name VARCHAR(10),
+ department_id SMALLINT,
+ salary INT,
+ manager_id TINYINT,
+ emp_age TINYINT
+);
+
+INSERT INTO emp
+VALUES
+(1, 'Ankit', 100, 10000, 4, 39),
+(2, 'Mohit', 100, 15000, 5, 48),
+(3, 'Vikas', 100, 10000, 4, 37),
+(4, 'Rohit', 100, 5000, 2, 16),
+(5, 'Mudit', 200, 12000, 6, 55),
+(6, 'Agam', 200, 12000, 2, 14),
+(7, 'Sanjay', 200, 9000, 2, 13),
+(8, 'Ashish', 200, 5000, 2, 12),
+(9, 'Mukesh', 300, 6000, 6, 51),
+(10, 'Rakesh', 300, 7000, 6, 50);
+
+SELECT * FROM emp;
+
+--------------------------------------------
+Table 02
+--------------------------------------------
+
+CREATE TABLE Employees
+(
+  EmployeeID int NOT NULL PRIMARY KEY,
+  FirstName varchar(50) NOT NULL,
+  LastName varchar(50) NOT NULL,
+  ManagerID int NULL
+)
+
+INSERT INTO Employees VALUES (1, 'Ken', 'Thompson', NULL)
+INSERT INTO Employees VALUES (2, 'Terri', 'Ryan', 1)
+INSERT INTO Employees VALUES (3, 'Robert', 'Durello', 1)
+INSERT INTO Employees VALUES (4, 'Rob', 'Bailey', 2)
+INSERT INTO Employees VALUES (5, 'Kent', 'Erickson', 2)
+INSERT INTO Employees VALUES (6, 'Bill', 'Goldberg', 3)
+INSERT INTO Employees VALUES (7, 'Ryan', 'Miller', 3)
+INSERT INTO Employees VALUES (8, 'Dane', 'Mark', 5)
+INSERT INTO Employees VALUES (9, 'Charles', 'Matthew', 6)
+INSERT INTO Employees VALUES (10, 'Michael', 'Jhonson', 6) 
+
+SELECT * FROM Employees
+
+---------------------------------------------------------------
