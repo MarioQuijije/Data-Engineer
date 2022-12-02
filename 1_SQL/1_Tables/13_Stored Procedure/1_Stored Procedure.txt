@@ -1,0 +1,27 @@
+---------------------------------------------------------------
+Table 01
+---------------------------------------------------------------
+
+DROP TABLE IF EXISTS employee
+
+CREATE TABLE employee
+(e_id int IDENTITY,
+ e_name varchar(10),
+ e_salary int,
+ e_age int,
+ e_gender varchar(10),
+ e_dept varchar(10)
+);
+
+INSERT INTO employee
+VALUES
+('Sam', 95000, 45, 'Male', 'Operations'),
+('Bob', 80000, 21, 'Male', 'Support'),
+('Anne', 125000, 25, 'Female', 'Analytics'),
+('Julia', 73000, 30, 'Female', 'Analytics'),
+('Matt', 159000, 33, 'Male', 'Sales'),
+('Jeff', 112000, 27, 'Male', 'Operations');
+
+SELECT * FROM employee
+
+--------------------------------------------------------------
